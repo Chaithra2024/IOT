@@ -1,0 +1,22 @@
+void setup() {
+  pinMode(8, INPUT);
+  pinMode(9, OUTPUT);
+
+  Serial.begin(9600);  // Initialize Serial Monitor
+}
+
+void loop() {
+  int temp = digitalRead(8);  // Read LDR sensor value
+
+  Serial.println("Intensity = ");
+  Serial.println(temp);  // Display output on Serial Monitor
+
+  delay(300);
+
+  if (temp == HIGH) {
+    digitalWrite(9, HIGH);  // Turn ON LED
+  }
+  else {
+    digitalWrite(9, LOW);   // Turn OFF LED
+  }
+}
